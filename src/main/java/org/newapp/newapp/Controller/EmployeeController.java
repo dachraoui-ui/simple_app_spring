@@ -1,7 +1,7 @@
 package org.newapp.newapp.Controller;
 
-import org.newapp.*;
-import org.newapp.newapp.model.Employee;
+
+import org.newapp.newapp.model.Employees;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +13,16 @@ import java.util.List;
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
-    public final static List<Employee> employees = new ArrayList<>();
+    public final static List<Employees> employees = new ArrayList<>();
 
     static {
         for (int i = 0; i < 10 ; i++) {
-            employees.add(new Employee(i,"employeeId"+i, "Employee"+i, "Role"+i));
+            employees.add(new Employees(i,"employeeId"+i, "Employee"+i, "Role"+i));
         }
     }
     @GetMapping
     public String getAllEmployees(Model model){
-        model.addAttribute("employees",model);
+        model.addAttribute("employees",employees);
         return "employees";
     }
 }
