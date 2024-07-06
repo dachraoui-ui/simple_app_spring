@@ -15,7 +15,7 @@
             <th>Role</th>
         </tr>
         <tr th:each="employee : ${employees}">
-            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.employeeId}"></td>
             <td th:text="${employee.name}"></td>
             <td th:text="${employee.role}"></td>
         </tr>

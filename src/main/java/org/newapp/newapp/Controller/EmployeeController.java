@@ -1,6 +1,6 @@
 package org.newapp.newapp.Controller;
 
-
+import org.newapp.*;
 import org.newapp.newapp.model.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +13,11 @@ import java.util.List;
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
-    public static List<Employee> employees = new ArrayList<>();
+    public final static List<Employee> employees = new ArrayList<>();
 
     static {
         for (int i = 0; i < 10 ; i++) {
-            employees.add(new Employee(i, "Employee"+i, "Role"+i));
+            employees.add(new Employee(i,"employeeId"+i, "Employee"+i, "Role"+i));
         }
     }
     @GetMapping

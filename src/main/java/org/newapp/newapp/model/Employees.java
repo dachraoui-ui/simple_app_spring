@@ -10,9 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Employee {
-    private String id;
+public class Employees {
+    private long id;
+    private String employeeId;
     private String name;
     private String role;
+
+
 
 }
