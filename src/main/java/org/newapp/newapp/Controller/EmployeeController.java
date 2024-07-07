@@ -1,6 +1,9 @@
 package org.newapp.newapp.Controller;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.newapp.newapp.Service.EmployeeService;
 import org.newapp.newapp.model.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,17 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 @Controller
 @RequestMapping("/employees")
-public class EmployeeController {
-    public final static List<Employee> EMPLOYEES = new ArrayList<>();
+@AllArgsConstructor
 
-    static {
-        for (int i = 0; i < 10 ; i++) {
-            EMPLOYEES.add(new Employee(i,"employeeId"+i, "Employee"+i, "Role"+i));
-        }
-    }
+public class EmployeeController {
+    public final EmployeeService employeeService;
+
     @GetMapping
     public String getAllEmployees(Model model){
-        model.addAttribute("employees", EMPLOYEES);
+        model.addAttribute("employees", employeeService.getAllEmployees());
         return "employees";
     }
+
+
 }
