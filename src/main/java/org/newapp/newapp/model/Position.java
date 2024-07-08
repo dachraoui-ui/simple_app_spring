@@ -1,7 +1,7 @@
 package org.newapp.newapp.model;
 
 public enum Position {
-    Manager , SuperVisor , TeamLeader , Member;
+    Manager , SuperVisor , TeamLeader , Member, NotValid;
 
     @Override
     public String toString() {
@@ -18,8 +18,9 @@ public enum Position {
             case TeamLeader -> {
                 return "TeamLeader";
             }
-
+            default -> {
+                return "NotValid";
+            }
         }
-        return "Not Valid";
     }
 }
