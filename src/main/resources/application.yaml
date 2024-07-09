@@ -2,7 +2,7 @@ spring:
   application:
     name: newApp
   datasource:
-    url: jdbc:mysql://localhost:3306/newApp
+    url: jdbc:mysql://localhost:3306/employees
     username: root
     password:
   jpa:
