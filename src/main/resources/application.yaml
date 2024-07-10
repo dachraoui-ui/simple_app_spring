@@ -3,8 +3,8 @@ spring:
     name: newApp
   datasource:
     url: jdbc:mysql://localhost:3306/employees
-    username: root
-    password:
+    username: ahmed
+    password: ahmed
   jpa:
     properties:
       hibernate:
