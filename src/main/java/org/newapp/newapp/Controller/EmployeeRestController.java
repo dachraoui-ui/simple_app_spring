@@ -1,7 +1,7 @@
 package org.newapp.newapp.Controller;
 
 import lombok.AllArgsConstructor;
-import org.newapp.newapp.Service.EmployeeService;
+import org.newapp.newapp.Service.EmployeeServiceImpl;
 import org.newapp.newapp.model.Employee;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/employees")
 public class EmployeeRestController {
-    public final EmployeeService employeeService;
+    public final EmployeeServiceImpl employeeService;
 
     @GetMapping
     public List<Employee> getAllEmployees(Model model){
          return employeeService.getAllEmployees();
-
     }
 }
