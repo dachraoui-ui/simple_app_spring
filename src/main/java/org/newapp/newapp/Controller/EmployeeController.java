@@ -19,8 +19,8 @@ public class EmployeeController {
 
     @GetMapping("/")
     public String getAllEmployees(Model model){
-        model.addAttribute("employees", employeeService.getAllEmployees());
-        return "employees";
+        model.addAttribute("employee", employeeService.getAllEmployees());
+        return "employee";
     }
     @GetMapping("/ShowNewEmployee")
     public String ShowNewEmployee(Model model){
@@ -37,7 +37,7 @@ public class EmployeeController {
     public String ShowUpdate(@PathVariable(value ="id") Long id , Model model){
         Optional<Employee> employee = employeeService.getEmployeeById(id);
         model.addAttribute("employee",employee);
-        return "update_emp";
+        return "update_employee";
     }
     @GetMapping("/delete_emp/{id}")
     public String DeleteEmployee(@PathVariable(value = "id") Long id){
